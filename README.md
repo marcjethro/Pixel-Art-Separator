@@ -10,7 +10,7 @@ This project was commissioned by a pixel artist. They wanted a tool that could h
 
 Make sure you have [Python 3](https://www.python.org/downloads/) installed,
 
-If you haven't already, install [pillow](https://pypi.org/project/Pillow/), [opencv-python](https://pypi.org/project/opencv-python/), [numpy](https://pypi.org/project/numpy/)
+If you haven't already, install [pillow](https://pypi.org/project/Pillow/), [opencv-python](https://pypi.org/project/opencv-python/), and [numpy](https://pypi.org/project/numpy/)
 ```bash
 python -m pip install --upgrade pip
 python -m pip install pillow
@@ -32,10 +32,14 @@ Go inside the working directory and run `pixel_chooser.py` with python:
 ```bash
 python pixel_chooser.py
 ```
-Wait for a few seconds and a GUI should pop up.
+Wait for a few seconds and a GUI should pop up. Try to open some pixel art in the Samples folder.
+
 
 ![Gui Picture](screenshot.png)
+
+
 ![Gui Picture2](screenshot2.png)
+
 
 ## Contributing
 Any and all feedback is welcome.
