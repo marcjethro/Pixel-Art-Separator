@@ -170,7 +170,8 @@ class ImageViewer(tk.Frame):
         self.master.resized_image = self.shown_image_left.copy()
         self.shown_image_left = ImageTk.PhotoImage(Image.fromarray(self.shown_image_left))
 
-        self.shown_image_right = cv2.resize(processed_image, (new_right_width, new_right_height))
+        self.shown_image_right = cv2.resize(processed_image, (new_right_width, new_right_height),
+                                            interpolation=cv2.INTER_NEAREST_EXACT)
         self.shown_image_right = ImageTk.PhotoImage(Image.fromarray(self.shown_image_right))
 
         self.left_canvas.configure(height=new_left_height, width=new_left_width)
@@ -187,22 +188,18 @@ class ImageViewer(tk.Frame):
         height, width, channels = image.shape
         ratio = height / width
 
-        new_width = width
-        new_height = height
-
-        if height > canvas_height or width > canvas_width:
-            if ratio < 1:
-                new_width = canvas_width
-                new_height = int(new_width * ratio)
-                if new_height > canvas_height:
-                    new_height = canvas_height
-                    new_width = int(new_height * (1 / ratio))
-            else:
+        if ratio < 1:
+            new_width = canvas_width
+            new_height = int(new_width * ratio)
+            if new_height > canvas_height:
                 new_height = canvas_height
                 new_width = int(new_height * (1 / ratio))
-                if new_width > canvas_width:
-                    new_width = canvas_width
-                    new_height = int(new_width * ratio)
+        else:
+            new_height = canvas_height
+            new_width = int(new_height * (1 / ratio))
+            if new_width > canvas_width:
+                new_width = canvas_width
+                new_height = int(new_width * ratio)
         return new_width, new_height, height
 
     def activate_pick(self):
