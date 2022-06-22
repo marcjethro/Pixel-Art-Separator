@@ -1,11 +1,6 @@
 # Pixel Art Separator
 Pixel Art Separator is a python project commissioned from my [fiverr gig](https://www.fiverr.com/marcjethro). It's purpose is to separate pixel art characters from their background. The GUI is made using Tkinter and the image processing is done through opencv-python, pillow, and numpy.
 
-
-#### About Pixel Art Separator
-
-This project was commissioned by a pixel artist. They wanted a tool that could help them separate the characters from the background. The solution they came up with (which I implemented for them) was to have two canvases side by side. The user will open an image that will show up on the left canvas. They will then manually click pixels on the left canvas and all pixels of the same color will get transfered onto the right. After the user has selected all pixels of the character, they can save the right canvas as a new image file.
-
 ## Installation
 
 Make sure you have [Python 3](https://www.python.org/downloads/) installed,
